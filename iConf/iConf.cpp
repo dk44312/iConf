@@ -15,6 +15,6 @@ int main()
 {
     srand(time(NULL));
     Obszar bieda(12, " help pls ", "help pls2 ", "help pls3");
-    std::cout << "work pls pls";
+    std::cout << "work pls pls"<<" update";
 }
 
