@@ -152,10 +152,10 @@
   <ItemGroup>
     <ClInclude Include="jest_zaproszony.h" />
     <ClInclude Include="Obszar.h" />
-    <ClInclude Include="Pokój.h" />
+    <ClInclude Include="Pokoj.h" />
     <ClInclude Include="Spotkanie.h" />
-    <ClInclude Include="Użytkownik.h" />
-    <ClInclude Include="Wyposażenie.h" />
+    <ClInclude Include="Uzytkownik.h" />
+    <ClInclude Include="Wyposazenie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
