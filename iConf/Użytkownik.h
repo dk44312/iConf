@@ -19,7 +19,21 @@ public:
     bool edytuj(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email);
     //bool usuñ(int Id);
 
+    int get_id() { return _id; }
+    std::string get_login() { return _login; }
+    std::string get_imiê() { return _imiê; }
+    std::string get_nazwisko() { return _nazwisko; }
+    std::string get_nazwa() { return _nazwa; }
+    std::string get_email() { return _email; }
+    std::string get_has³o() { return _has³o; }
 
+    void set_id(int id) { _id=id; }
+    void set_login(std::string login) { _login=login; }
+    void set_imiê(std::string imiê) { _imiê=imiê; }
+    void set_nazwisko(std::string nazwisko) { _nazwisko=nazwisko; }
+    void set_nazwa(std::string nazwa) { _nazwa=nazwa; }
+    void set_email(std::string email) { _email=email; }
+    void set_has³o(std::string has³o) { _has³o=has³o; }
 };
 
 U¿ytkownik::U¿ytkownik(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email) {
