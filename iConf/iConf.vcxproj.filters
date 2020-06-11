@@ -26,16 +26,16 @@
     <ClInclude Include="Obszar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Pokój.h">
+    <ClInclude Include="Pokoj.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Spotkanie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Użytkownik.h">
+    <ClInclude Include="Uzytkownik.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Wyposażenie.h">
+    <ClInclude Include="Wyposazenie.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
