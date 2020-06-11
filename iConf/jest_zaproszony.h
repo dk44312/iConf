@@ -1,6 +1,6 @@
 #pragma once
 #include "Spotkanie.h"
-#include "U¿ytkownik.h"
+#include "Uzytkownik.h"
 
 class jest_zaproszony
 {
@@ -12,13 +12,13 @@ private:
 
 public:
     Spotkanie _unnamed_Spotkanie_;
-    U¿ytkownik _unnamed_U¿ytkownik_;
-    bool dodaj(int Id, int Id_spotkania, int Id_u¿ytkownika, std::string Rola, std::time_t Data, std::time_t Godzina);
-    bool usuñ(int Id);
+    Uzytkownik _unnamed_Uzytkownik_;
+    bool dodaj(int Id, int Id_spotkania, int Id_uzytkownika, std::string Rola, std::time_t Data, std::time_t Godzina);
+    bool usun(int Id);
     void setUnnamed_Spotkanie_(class Spotkanie* Unnamed_Spotkanie_);
     class Spotkanie* getUnnamed_Spotkanie_();
-    void setUnnamed_U¿ytkownik_(class U¿ytkownik* Unnamed_U¿ytkownik_);
-    class U¿ytkownik* getUnnamed_U¿ytkownik_();
+    void setUnnamed_Uzytkownik_(class Uzytkownik* Unnamed_Uzytkownik_);
+    class Uzytkownik* getUnnamed_Uzytkownik_();
 
     int get_id() { return _id; }
     std::string get_rola() { return _rola; }

@@ -5,10 +5,10 @@
 
 #include "jest_zaproszony.h"
 #include "Obszar.h"
-#include "Pokój.h"
+#include "Pokoj.h"
 #include "Spotkanie.h"
-#include "Użytkownik.h"
-#include "Wyposażenie.h"
+#include "Uzytkownik.h"
+#include "Wyposazenie.h"
 
 bool exit_application() {//return true-exit app, return false- dont exit app
     char shut_down;
@@ -30,7 +30,7 @@ bool exit_application() {//return true-exit app, return false- dont exit app
 bool log_out() {//return true- log out form account, return false dont log out from account
     char log_out;
     while (true) {
-        std::cout << "Czy napewno chcesz wylogować?: \n T-tak\nN-nie ";
+        std::cout << "Czy napewno chcesz wylogowac?: \n T-tak\nN-nie ";
         std::cin >> log_out;
         if (log_out == 'T' || log_out == 't') {
             return true;
@@ -44,7 +44,7 @@ bool log_out() {//return true- log out form account, return false dont log out f
     }
 }
 
-bool administrator_menu(Użytkownik user) //return true dla zakoncz aplikacje, return false dla wylogowania
+bool administrator_menu(Uzytkownik user) //return true dla zakoncz aplikacje, return false dla wylogowania
 {
     char choice;
     bool status = true;
@@ -84,7 +84,7 @@ bool administrator_menu(Użytkownik user) //return true dla zakoncz aplikacje, r
     return true;
 }
 
-bool menadżer_menu(Użytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
+bool menadzer_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
 {
     char choice;
     bool status = true;
@@ -122,7 +122,7 @@ bool menadżer_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
     return true;
 }
 
-bool pracownik_menu(Użytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
+bool pracownik_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
 {
     char choice;
     bool status=true;
@@ -160,11 +160,11 @@ bool pracownik_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
     return true;
 }
 
-bool gość_menu() //return true dla zakoncz aplikacje, return false dla zalogowania
+bool gosc_menu() //return true dla zakoncz aplikacje, return false dla zalogowania
 {
     char choice;
     bool status = true;
-    std::cout << "Witaj użytkowniku!\n";
+    std::cout << "Witaj uzytkowniku!\n";
     while (status) {
         std::cout << "1) Przegladaj obszary\n 2) Przegladaj Pokoje\n 3) Przegladaj Spotkania\n 4) Zaloguj\n 5) Zamknij aplikacje \n";
         std::cout << "wybierz odpowiednia opcje: ";
