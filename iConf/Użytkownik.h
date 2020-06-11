@@ -19,9 +19,9 @@ public:
     //~U¿ytkownik();
     std::vector<jest_zaproszony> _unnamed_jest_zaproszony_;
     std::vector<Spotkanie> _zorganizowane_przez;
-    //bool dodaj(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email);
+    bool dodaj(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email);
     bool edytuj(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email);
-    //bool usuñ(int Id);
+    bool usuñ(int Id);
 
     int get_id() { return _id; }
     std::string get_login() { return _login; }
