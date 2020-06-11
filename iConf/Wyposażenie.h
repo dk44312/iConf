@@ -1,4 +1,6 @@
 #pragma once
+#include "Pokój.h"
+
 class Wyposa¿enie
 {
 private:

@@ -1,4 +1,7 @@
 #pragma once
+#include "jest_zaproszony.h"
+#include "Spotkanie.h"
+
 class U¿ytkownik
 {
 private:
@@ -12,6 +15,7 @@ protected:
     std::string _has³o;
 public:
     U¿ytkownik(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email);
+    U¿ytkownik();//empty test constructor
     //~U¿ytkownik();
     std::vector<jest_zaproszony> _unnamed_jest_zaproszony_;
     std::vector<Spotkanie> _zorganizowane_przez;
@@ -36,6 +40,7 @@ public:
     void set_has³o(std::string has³o) { _has³o=has³o; }
 };
 
+U¿ytkownik::U¿ytkownik(){}//empty test constructor
 U¿ytkownik::U¿ytkownik(int Id, std::string Login, std::string Imiê, std::string Nazwisko, std::string Nazwa, std::string Email) {
     this->_id = Id;
     this->_login = Login;

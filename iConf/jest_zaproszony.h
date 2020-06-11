@@ -1,4 +1,7 @@
 #pragma once
+#include "Spotkanie.h"
+#include "U¿ytkownik.h"
+
 class jest_zaproszony
 {
 private:
@@ -8,7 +11,7 @@ private:
     std::time_t _godzina;
 
 public:
-    class Spotkanie _unnamed_Spotkanie_;
+    Spotkanie _unnamed_Spotkanie_;
     U¿ytkownik _unnamed_U¿ytkownik_;
     bool dodaj(int Id, int Id_spotkania, int Id_u¿ytkownika, std::string Rola, std::time_t Data, std::time_t Godzina);
     bool usuñ(int Id);

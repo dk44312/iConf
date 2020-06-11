@@ -45,7 +45,13 @@ public:
 
     Obszar(int id, std::string nazwa, std::string lokalizacja, std::string grafika, std::vector<Pokój> _pokoje_w_obszarze);
     Obszar(int id, std::string nazwa, std::string lokalizacja, std::string grafika);
+    Obszar();//empty test constructor
+
 };
+Obszar::Obszar()
+{
+
+}
 
 Obszar::Obszar(int id, std::string nazwa, std::string lokalizacja, std::string grafika, std::vector<Pokój> _pokoje_w_obszarze)
 {
