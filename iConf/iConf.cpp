@@ -5,10 +5,10 @@
 
 #include "jest_zaproszony.h"
 #include "Obszar.h"
-#include "Pokój.h"
+#include "Pokoj.h"
 #include "Spotkanie.h"
-#include "Użytkownik.h"
-#include "Wyposażenie.h"
+#include "Uzytkownik.h"
+#include "Wyposazenie.h"
 
 bool exit_application() {//return true-exit app, return false- dont exit app
     char shut_down;
@@ -44,8 +44,9 @@ bool log_out() {//return true- log out form account, return false dont log out f
     }
 }
 
-bool administrator_menu(Użytkownik user) //return true dla zakoncz aplikacje, return false dla wylogowania
+bool administrator_menu(Uzytkownik user) //return true dla zakoncz aplikacje, return false dla wylogowania
 {
+    bool temp;
     char choice;
     bool status = true;
     std::cout << "Witaj " << user.get_nazwa() << "!\n";
@@ -65,13 +66,13 @@ bool administrator_menu(Użytkownik user) //return true dla zakoncz aplikacje, r
         case'5':
             break;
         case'6':
-            bool temp = log_out();
+            temp = log_out();
             if (temp == true) {
                 return false;
             }
             break;
         case'7':
-            bool temp = exit_application();
+            temp = exit_application();
             if (temp == true) {
                 return true;
             }
@@ -84,8 +85,9 @@ bool administrator_menu(Użytkownik user) //return true dla zakoncz aplikacje, r
     return true;
 }
 
-bool menadżer_menu(Użytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
+bool menadżer_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
 {
+    bool temp;
     char choice;
     bool status = true;
     std::cout << "Witaj " << user.get_nazwa() << "!\n";
@@ -103,13 +105,13 @@ bool menadżer_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
         case'4':
             break;
         case'5':
-            bool temp = log_out();
+            temp = log_out();
             if (temp == true) {
                 return false;
             }
             break;
         case'6':
-            bool temp = exit_application();
+            temp = exit_application();
             if (temp == true) {
                 return true;
             }
@@ -122,8 +124,9 @@ bool menadżer_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
     return true;
 }
 
-bool pracownik_menu(Użytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
+bool pracownik_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
 {
+    bool temp;
     char choice;
     bool status=true;
     std::cout << "Witaj " << user.get_nazwa() << "!\n";
@@ -141,13 +144,13 @@ bool pracownik_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
         case'4':
             break;
         case'5':
-            bool temp = log_out();
+            temp = log_out();
             if (temp == true) {
                 return false;
             }
             break;
         case'6':
-            bool temp = exit_application();
+            temp = exit_application();
             if (temp == true) {
                 return true;
             }
@@ -160,8 +163,9 @@ bool pracownik_menu(Użytkownik user)//return true dla zakoncz aplikacje, return
     return true;
 }
 
-bool gość_menu() //return true dla zakoncz aplikacje, return false dla zalogowania
+bool gosc_menu() //return true dla zakoncz aplikacje, return false dla zalogowania
 {
+    bool temp;
     char choice;
     bool status = true;
     std::cout << "Witaj użytkowniku!\n";
@@ -179,7 +183,7 @@ bool gość_menu() //return true dla zakoncz aplikacje, return false dla zalogow
         case'4':
             break;
         case'5':
-            bool temp = exit_application();
+            temp = exit_application();
             if (temp == true) {
                 return true;
             }
