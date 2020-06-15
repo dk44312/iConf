@@ -2,7 +2,6 @@
 #include "Obszar.h"
 #include "Wyposazenie.h"
 #include "Spotkanie.h"
-
 class Pokoj
 {
 private:
@@ -10,26 +9,36 @@ private:
     std::string _nazwa;
     float _powierzchnia;
     std::string _grafika;
-    //Obszar _nalezy_do;
+    int _obszar_id;
 public:
-    std::vector<class Wyposazenie*> _posiada;
-    std::vector<class Spotkanie*> _odbywa_sie_w;
-    bool dodaj(int Id, std::string Nazwa, float Powierzchnia, std::string Grafika);
-    bool edytuj(int Id, std::string Nazwa, float Powierzchnia, std::string Grafika);
-    bool usun(int Id);
-    bool dodaj_do_obszaru(int Id_pokoju, int Id_obszaru);
-    bool usun_z_obszaru(int Id);
-
+    Pokoj(int Id, std::string Nazwa, float Powierzchnia, std::string Grafika) {
+        this->_id = Id;
+        this->_nazwa = Nazwa;
+        this->_powierzchnia = Powierzchnia;
+        this->_grafika = Grafika;
+    };
+    void edytuj(int Id, std::string Nazwa, float Powierzchnia, std::string Grafika) {
+        this->_id = Id;
+        this->_nazwa = Nazwa;
+        this->_powierzchnia = Powierzchnia;
+        this->_grafika = Grafika;
+    };
+    ~Pokoj() {
+    };
+    void dodaj_do_obszaru(int Id_obszaru) {
+        this->_obszar_id = Id_obszaru;
+    };
+    void usun_z_obszaru() {
+        this->_obszar_id = NULL;
+    };
+    //getters
     int get_id() { return _id; }
     std::string get_nazwa() { return _nazwa; }
     float get_powierzchnia() { return _powierzchnia; }
     std::string get_grafika() { return _grafika; }
-   // Obszar get_nalezy_do() { return _nalezy_do; }
-
+    //setters
     void set_id(int id) { _id = id; }
     void set_nazwa(std::string nazwa) { _nazwa = nazwa; }
     void set_powierzchnia(float powierzchnia) { _powierzchnia = powierzchnia; }
     void set_grafika(std::string grafika) { _grafika = grafika; }
-   // void set_nalezy_do(Obszar nalezy_do) { _nalezy_do = nalezy_do; }
-
 };

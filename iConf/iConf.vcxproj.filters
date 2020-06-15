@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jest_zaproszony.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Obszar.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -2,200 +2,30 @@
 #include <vector>
 #include <string>
 #include <ctime>
-
-#include "jest_zaproszony.h"
 #include "Obszar.h"
 #include "Pokoj.h"
 #include "Spotkanie.h"
 #include "Uzytkownik.h"
 #include "Wyposazenie.h"
 
-bool exit_application() {//return true-exit app, return false- dont exit app
-    char shut_down;
-    while (true) {
-        std::cout << "Czy napewno chcesz zamknac aplikacje?: \n T-tak\nN-nie ";
-        std::cin >> shut_down;
-        if (shut_down == 'T' || shut_down == 't') {
-            return true;
-        }
-        else if (shut_down == 'N' || shut_down == 'n') {
-            return false;
-        }
-        else {
-            std::cout << "Nieprawidlowy wybor! sprobuj jeszcze raz.";
-        }
-    }
-}
-
-bool log_out() {//return true- log out form account, return false dont log out from account
-    char log_out;
-    while (true) {
-        std::cout << "Czy napewno chcesz wylogowac?: \n T-tak\nN-nie ";
-        std::cin >> log_out;
-        if (log_out == 'T' || log_out == 't') {
-            return true;
-        }
-        else if (log_out == 'N' || log_out == 'n') {
-            return false;
-        }
-        else {
-            std::cout << "Nieprawidlowy wybor! sprobuj jeszcze raz.";
-        }
-    }
-}
-
-bool administrator_menu(Uzytkownik user) //return true dla zakoncz aplikacje, return false dla wylogowania
-{
-    char choice;
-    bool status = true;
-    std::cout << "Witaj " << user.get_nazwa() << "!\n";
-    while (status) {
-        std::cout << " 1) Zarzadzaj obszarami\n 2) Zarzadzaj uzytkownikami\n 3) Zarzadzaj spotkaniami\n 4) Zarzadzaj pokojami 5) Moje konto\n \n 6) Wyloguj\n 7) Zamknij aplikacje";
-        std::cout << "wybierz odpowiednia opcje ";
-        std::cin >> choice;
-        switch (choice) {
-        case '1':
-            break;
-        case'2':
-            break;
-        case'3':
-            break;
-        case'4':
-            break;
-        case'5':
-            break;
-        case'6':
-            bool temp = log_out();
-            if (temp == true) {
-                return false;
-            }
-            break;
-        case'7':
-            bool temp = exit_application();
-            if (temp == true) {
-                return true;
-            }
-            break;
-        default:
-            std::cout << "Nieprawidlowa opcja! Sprobuj jeszcze raz.\n";
-            break;
-        }
-    }
-    return true;
-}
-
-bool menadzer_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
-{
-    char choice;
-    bool status = true;
-    std::cout << "Witaj " << user.get_nazwa() << "!\n";
-    while (status) {
-        std::cout << " 1) Przegladaj obszary\n 2) Przegladaj spotkania\n 3) Przegladaj pokoje\n 4) Moje konto\n 5) Wyloguj\n 6) Zamknij aplikacje";
-        std::cout << "wybierz odpowiednia opcje: ";
-        std::cin >> choice;
-        switch (choice) {
-        case '1':
-            break;
-        case'2':
-            break;
-        case'3':
-            break;
-        case'4':
-            break;
-        case'5':
-            bool temp = log_out();
-            if (temp == true) {
-                return false;
-            }
-            break;
-        case'6':
-            bool temp = exit_application();
-            if (temp == true) {
-                return true;
-            }
-            break;
-        default:
-            std::cout << "Nieprawidlowa opcja! Sprobuj jeszcze raz.\n";
-            break;
-        }
-    }
-    return true;
-}
-
-bool pracownik_menu(Uzytkownik user)//return true dla zakoncz aplikacje, return false dla wylogowania
-{
-    char choice;
-    bool status=true;
-    std::cout << "Witaj " << user.get_nazwa() << "!\n";
-    while (status) {
-        std::cout << " 1) Przegladaj obszary\n 2) Przegladaj spotkania\n 3) Przegladaj pokoje\n 4) Moje konto\n 5) Wyloguj\n 6) Zamknij aplikacje\n";
-        std::cout << "wybierz odpowiednia opcje ";
-        std::cin >> choice;
-        switch (choice) {
-        case '1':
-            break;
-        case'2':
-            break;
-        case'3':
-            break;
-        case'4':
-            break;
-        case'5':
-            bool temp = log_out();
-            if (temp == true) {
-                return false;
-            }
-            break;
-        case'6':
-            bool temp = exit_application();
-            if (temp == true) {
-                return true;
-            }
-            break;
-        default:
-            std::cout << "Nieprawidlowa opcja! Sprobuj jeszcze raz.\n";
-            break;
-        }
-    }
-    return true;
-}
-
-bool gosc_menu() //return true dla zakoncz aplikacje, return false dla zalogowania
-{
-    char choice;
-    bool status = true;
-    std::cout << "Witaj uzytkowniku!\n";
-    while (status) {
-        std::cout << "1) Przegladaj obszary\n 2) Przegladaj Pokoje\n 3) Przegladaj Spotkania\n 4) Zaloguj\n 5) Zamknij aplikacje \n";
-        std::cout << "wybierz odpowiednia opcje: ";
-        std::cin >> choice;
-        switch (choice) {
-        case '1':
-            break;
-        case'2':
-            break;
-        case'3':
-            break;
-        case'4':
-            break;
-        case'5':
-            bool temp = exit_application();
-            if (temp == true) {
-                return true;
-            }
-            break;
-        default:
-            std::cout << "Nieprawidlowa opcja! Sprobuj jeszcze raz.\n";
-            break;
-        }
-    }
-    return true;
-}
-
 int main()
 {
-    srand(time(NULL));
-    Obszar bieda(12, " help pls ", "help pls2 ", "help pls3");
-    std::cout << "work pls pls"<<" update";
+    //uzytownik
+    Uzytkownik uzytkownik_testowy1(1, "test1", "Uzytkownik", "Testowy", "Uzytkownik Testowy", "test@iconf.com");
+    Uzytkownik uzytkownik_testowy2(2, "test2", "Uzytkownik", "Testowy", "Uzytkownik Testowy", "test@iconf.com");
+    //obszar
+    Obszar obszar_testowy(1, "Obszar Testowy", "WI ZUT", "obszar_testowy.png");
+    //pokoj
+    Pokoj pokoj_testowy(1, "Pokoj Testowy", 123.45, "pokoj_testowy.png");
+    pokoj_testowy.dodaj_do_obszaru(1);
+    //wyposazenie
+    Wyposazenie wyposazenie_testowe(1, "Krzeslo", 10, "Krzeslo obrotowe czarne");
+    wyposazenie_testowe.dodaj_do_pokoju(1);
+    //spotkanie
+    Spotkanie spotkanie_testowe(1, "Spotkanie Testowe", "20-06-2020", "12:00:00", "20-06-2020", "15:00:00", "Opis Testowy", "Utworzone", 1);
+    spotkanie_testowe.przypisz_pokoj(1);
+    spotkanie_testowe.przypisz_goscia(1);
+    spotkanie_testowe.przypisz_goscia(2);
+    spotkanie_testowe.show_info();
 }
 

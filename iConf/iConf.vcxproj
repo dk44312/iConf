@@ -150,7 +150,6 @@
     <ClCompile Include="iConf.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jest_zaproszony.h" />
     <ClInclude Include="Obszar.h" />
     <ClInclude Include="Pokoj.h" />
     <ClInclude Include="Spotkanie.h" />
